@@ -35,6 +35,74 @@
     "items": [
       {
         "visible": true,
+        "title": "EquiVLA: A General Framework for Rotationally Equivariant Vision-Language-Action Models",
+        "authors": [
+          { "name": "Thien-Loc Ha", "self": true, "equal": true },
+          { "name": "Quang-Tan Nguyen", "equal": true },
+          { "name": "Trong-Bao Ho", "equal": true },
+          { "name": "Long Dinh" },
+          { "name": "Minh Duc Nguyen" },
+          { "name": "Gia-Binh Nguyen" },
+          { "name": "Pham Tri Quang" },
+          { "name": "Minh N Vu" },
+          { "name": "Duy MH Nguyen" },
+          { "name": "An Thai Le" },
+          { "name": "Ngo Anh Vien" }
+        ],
+        "venue": "Under review",
+        "year": 2026,
+        "links": { "pdf": "https://arxiv.org/pdf/2606.20246"}
+      },
+      {
+        "visible": true,
+        "title": "Start Right, Arrive Right: Asynchronous Execution via Initial Noise Selection",
+        "authors": [
+          { "name": "Trong-Bao Ho", "equal": true },
+          { "name": "Quang-Tan Nguyen", "equal": true },
+          { "name": "Thien-Loc Ha", "self": true, "equal": true },
+          { "name": "Gia-Binh Nguyen" },
+          { "name": "Viet-Thanh Nguyen" },
+          { "name": "Long Dinh" },
+          { "name": "Minh N Vu" },
+          { "name": "Duy MH Nguyen" },
+          { "name": "An Thai Le" },
+          { "name": "Ngo Anh Vien" }
+        ],
+        "venue": "Under review",
+        "year": 2026,
+        "links": { "pdf": "https://arxiv.org/pdf/2606.20246"}
+      },
+      {
+        "visible": true,
+        "title": "Finetuning Vision-Language-Action Models Requires Fewer Layers Than You Think",
+        "authors": [
+          { "name": "Gia-Binh Nguyen" },
+          { "name": "Trong-Bao Ho" },
+          { "name": "Thien-Loc Ha", "self": true },
+          { "name": "Khoa Vo" },
+          { "name": "Philip Lund Møller" },
+          { "name": "Quang T Nguyen" },
+          { "name": "Long Dinh" },
+          { "name": "Tuan Dam" },
+          { "name": "Vu Duong" },
+          { "name": "Tung M Luu" },
+          { "name": "Trung Le" },
+          { "name": "Tran Nguyen Le" },
+          { "name": "Minh Vu" },
+          { "name": "An Thai Le" },
+          { "name": "Ngan Le" },
+          { "name": "Daniel Sonntag" },
+          { "name": "James Zou" },
+          { "name": "Jan Peters" },
+          { "name": "Duy MH Nguyen" },
+          { "name": "Ngo Anh Vien" }
+        ],
+        "venue": "Under review",
+        "year": 2026,
+        "links": { "pdf": "https://arxiv.org/pdf/2606.20246"}
+      },
+      {
+        "visible": true,
         "title": "Multi-perspective traffic video description model with fine-grained refinement approach",
         "authors": [
           { "name": "Tuan-An To", "equal": true },
