@@ -1,10 +1,291 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf9f6; --surface:#ffffff; --fg:#1b1b1a; --muted:#5f5d57; --faint:#8c8a82;
+    --border:#e7e4dd; --hair:#efece6; --accent:#3a5e8c; --accent-soft:#eef3f9;
+  }
+  :root[data-theme="dark"]{
+    --bg:#15161a; --surface:#1c1e24; --fg:#e9e7e1; --muted:#a6a39b; --faint:#75736c;
+    --border:#2b2e36; --hair:#23252b; --accent:#8fb4e2; --accent-soft:#1f2733;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--fg);font-size:17px;
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;transition:background .35s ease,color .35s ease}
+  a{color:inherit}
+</style>
+</helmet>
+
+<div style="min-height:100vh">
+
+  <header style="position:sticky;top:0;z-index:20;backdrop-filter:saturate(1.4) blur(10px);background:color-mix(in srgb, var(--bg) 82%, transparent);border-bottom:1px solid var(--hair)">
+    <div style="max-width:840px;margin:0 auto;padding:13px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+      <a href="#top" style="font-family:'Lora',Georgia,serif;font-weight:600;font-size:17px;text-decoration:none;letter-spacing:-.01em">{{ name }}</a>
+      <nav style="display:flex;align-items:center;gap:22px">
+        <a href="#publications" style="font-size:13.5px;text-decoration:none;color:var(--muted)">Publications</a>
+        <a href="#cv" style="font-size:13.5px;text-decoration:none;color:var(--muted)">CV</a>
+        <a href="#contact" style="font-size:13.5px;text-decoration:none;color:var(--muted)">Contact</a>
+        <button onClick="{{ toggleTheme }}" aria-label="Toggle theme" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid var(--border);border-radius:8px;background:var(--surface);cursor:pointer;color:var(--fg);padding:0">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.2 5.2l1.7 1.7M17.1 17.1l1.7 1.7M18.8 5.2l-1.7 1.7M6.9 17.1l-1.7 1.7"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" style="max-width:840px;margin:0 auto;padding:56px 28px 96px">
+
+    <!-- PROFILE -->
+    <section style="display:flex;gap:34px;align-items:flex-start;flex-wrap:wrap">
+      <div style="flex:none;width:158px;height:188px;border-radius:12px;overflow:hidden;border:1px solid var(--border)">
+        <img src="{{ avatar }}" alt="{{ name }}" style="width:100%;height:100%;object-fit:cover;display:block">
+      </div>
+      <div style="flex:1;min-width:240px">
+        <h1 style="margin:2px 0 0;font-family:'Lora',Georgia,serif;font-weight:700;font-size:40px;letter-spacing:-.02em;line-height:1.08">{{ name }}</h1>
+        <p style="margin:11px 0 0;font-size:17px;color:var(--fg);font-weight:500">{{ title }}</p>
+        <p style="margin:4px 0 0;font-size:15.5px;color:var(--muted)">{{ lab }} · {{ university }}</p>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:18px">{{ profileLinks }}</div>
+      </div>
+    </section>
+
+    {{ aboutHtml }}
+    {{ newsHtml }}
+    {{ pubsHtml }}
+    {{ educationHtml }}
+    {{ experienceHtml }}
+    {{ awardsHtml }}
+
+    <!-- CV + CONTACT -->
+    <section id="cv" style="margin-top:48px;scroll-margin-top:72px">
+      <div id="contact" style="scroll-margin-top:72px;border:1px solid var(--border);border-radius:14px;background:var(--surface);padding:26px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+        <div>
+          <h2 style="margin:0;font-family:'Lora',Georgia,serif;font-size:22px;font-weight:600">Get in touch</h2>
+          <p style="margin:6px 0 0;font-size:14.5px;color:var(--muted);max-width:42ch">{{ contactTagline }}</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="{{ emailLink }}" style="font-family:'IBM Plex Mono',monospace;font-size:13px;text-decoration:none;padding:9px 16px;border-radius:8px;background:var(--accent);color:#fff">Email me</a>
+          <a href="{{ cvUrl }}" style="font-family:'IBM Plex Mono',monospace;font-size:13px;text-decoration:none;padding:9px 16px;border-radius:8px;border:1px solid var(--border);color:var(--fg)">Download CV (PDF)</a>
+        </div>
+      </div>
+      <p style="text-align:center;margin:34px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint)">{{ footer }}</p>
+    </section>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { dark: false, content: null };
+
+  componentDidMount() {
+    let pref = null;
+    try { pref = localStorage.getItem('hp-theme'); } catch (e) {}
+    if (!pref && window.matchMedia) {
+      pref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    const dark = pref === 'dark';
+    this.applyTheme(dark);
+    this.setState({ dark });
+
+    fetch('./content.json')
+      .then(r => r.json())
+      .then(content => this.setState({ content }));
+  }
+
+  applyTheme(dark) {
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  }
+
+  h(tag, props, ...children) {
+    return React.createElement(tag, props, ...children);
+  }
+
+  /* ---- profile links ---- */
+  buildProfileLinks(links) {
+    const style = 'display:inline-flex;align-items:center;gap:6px;font-family:\'IBM Plex Mono\',monospace;font-size:12.5px;text-decoration:none;padding:6px 11px;border:1px solid var(--border);border-radius:7px;color:var(--muted)';
+    return links
+      .filter(l => l.visible !== false)
+      .map((l, i) => this.h('a', { key: i, href: l.href, style: this.css(style) }, l.label));
+  }
+
+  /* ---- about ---- */
+  buildAbout(about) {
+    if (about.visible === false) return null;
+    const paras = about.paragraphs.map((p, i) =>
+      this.h('p', { key: i, style: { margin: '0 0 14px' }, dangerouslySetInnerHTML: { __html: p } })
+    );
+    return this.h('section', { style: { marginTop: '52px' } },
+      this.h('h2', { style: this.sectionTitle() }, 'About'),
+      this.h('div', { style: { fontSize: '17px', lineHeight: '1.72', color: 'var(--fg)', maxWidth: '64ch' } }, ...paras)
+    );
+  }
+
+  /* ---- news ---- */
+  buildNews(news) {
+    if (news.visible === false) return null;
+    const items = news.items
+      .filter(n => n.visible !== false)
+      .map((n, i) => this.h('li', {
+        key: i,
+        style: { display:'flex', gap:'18px', fontSize:'16px', lineHeight:'1.55' }
+      },
+        this.h('span', { style: { flex:'none', width:'74px', fontFamily:'\'IBM Plex Mono\',monospace', fontSize:'13px', color:'var(--faint)', paddingTop:'1px' } }, n.date),
+        this.h('span', { style: { color:'var(--fg)' }, dangerouslySetInnerHTML: { __html: n.text } })
+      ));
+    return this.h('section', { style: { marginTop:'48px' } },
+      this.h('h2', { style: { fontFamily:'\'IBM Plex Mono\',monospace', fontSize:'12px', fontWeight:500, letterSpacing:'.14em', textTransform:'uppercase', color:'var(--accent)', margin:'0 0 16px' } }, 'News'),
+      this.h('ul', { style: { listStyle:'none', margin:'0', padding:'0', display:'flex', flexDirection:'column', gap:'11px' } }, ...items)
+    );
+  }
+
+  sectionTitle() {
+    return { fontFamily: '\'IBM Plex Mono\',monospace', fontSize: '12px', fontWeight: 500, letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--accent)', margin: '0 0 16px' };
+  }
+
+  /* ---- publications ---- */
+  buildAuthors(authors) {
+    return authors.map((a, i) => {
+      const comma = i < authors.length - 1 ? ', ' : '';
+      const nameEl = a.self
+        ? this.h('strong', { key: 'n', style: { color:'var(--fg)', fontWeight:600 } }, a.name)
+        : a.name;
+      const eqEl = a.equal ? this.h('span', { key: 'eq', style: { color:'var(--accent)' } }, '*') : null;
+      return this.h(React.Fragment, { key: i }, nameEl, eqEl, comma);
+    });
+  }
+
+  buildPubLinks(links) {
+    const labels = { pdf:'PDF', arxiv:'arXiv', code:'Code', bibtex:'BibTeX' };
+    return Object.entries(links).map(([k, url], i) =>
+      this.h('a', {
+        key: i, href: url,
+        style: { fontFamily:'\'IBM Plex Mono\',monospace', fontSize:'11.5px', textDecoration:'none', padding:'3px 9px', border:'1px solid var(--border)', borderRadius:'6px', color:'var(--muted)' }
+      }, labels[k] || k)
+    );
+  }
+
+  buildPubs(publications, scholarLink) {
+    if (publications.visible === false) return null;
+    const pubs = publications.items.filter(p => p.visible !== false);
+    const last = pubs.length - 1;
+    const articles = pubs.map((p, i) => this.h('article', {
+      key: i,
+      style: { padding:'22px 0', borderTop:'1px solid var(--hair)', ...(i === last ? { borderBottom:'1px solid var(--hair)' } : {}) }
+    },
+      this.h('div', { style: { flex:'1' } },
+        this.h('h3', { style: { margin:'0 0 6px', fontFamily:'\'Lora\',Georgia,serif', fontSize:'20px', fontWeight:600, lineHeight:'1.28', letterSpacing:'-.01em' } }, p.title),
+        this.h('p', { style: { margin:'0 0 3px', fontSize:'15px', color:'var(--muted)', lineHeight:'1.5' } }, ...this.buildAuthors(p.authors)),
+        this.h('p', { style: { margin:'0 0 10px', fontSize:'15px', color:'var(--muted)' } },
+          this.h('em', { style: { fontStyle:'italic' } }, p.venue), ', ' + p.year
+        ),
+        this.h('div', { style: { display:'flex', flexWrap:'wrap', gap:'7px' } }, ...this.buildPubLinks(p.links))
+      )
+    ));
+    return this.h('section', { id: 'publications', style: { marginTop:'48px', scrollMarginTop:'72px' } },
+      this.h('div', { style: { display:'flex', alignItems:'baseline', justifyContent:'space-between', gap:'16px', marginBottom:'8px' } },
+        this.h('h2', { style: { ...this.sectionTitle(), margin: '0' } }, 'Publications'),
+        this.h('a', { href: scholarLink, style: { fontFamily:'\'IBM Plex Mono\',monospace', fontSize:'12px', textDecoration:'none', color:'var(--faint)' } }, 'full list on Scholar →')
+      ),
+      this.h('p', { style: { fontSize:'13px', color:'var(--faint)', margin:'0 0 4px' } },
+        this.h('span', { style: { color:'var(--accent)' } }, '*'), ' denotes equal contribution.'
+      ),
+      this.h('div', { style: { display:'flex', flexDirection:'column' } }, ...articles)
+    );
+  }
+
+  /* ---- education / experience ---- */
+  buildList(section, label, fields) {
+    if (section.visible === false) return null;
+    const items = section.items
+      .filter(item => item.visible !== false)
+      .map((item, i) => this.h('li', { key: i },
+        this.h('p', { style: { margin:'0', fontSize:'16px', fontWeight:600, lineHeight:'1.4' } }, item[fields[0]]),
+        this.h('p', { style: { margin:'2px 0 0', fontSize:'15px', color:'var(--muted)' } }, item[fields[1]]),
+        this.h('p', { style: { margin:'1px 0 0', fontFamily:'\'IBM Plex Mono\',monospace', fontSize:'13px', color:'var(--faint)' } }, item[fields[2]])
+      ));
+    return this.h('section', { style: { marginTop:'48px' } },
+      this.h('h2', { style: this.sectionTitle() }, label),
+      this.h('ul', { style: { listStyle:'none', margin:'0', padding:'0', display:'flex', flexDirection:'column', gap:'16px' } }, ...items)
+    );
+  }
+
+  /* ---- awards ---- */
+  buildAwards(awards) {
+    if (awards.visible === false) return null;
+    const items = awards.items
+      .filter(a => a.visible !== false)
+      .map((a, i) => this.h('li', {
+        key: i,
+        style: { display:'flex', gap:'18px', fontSize:'16px', lineHeight:'1.5' }
+      },
+        this.h('span', { style: { flex:'none', width:'74px', fontFamily:'\'IBM Plex Mono\',monospace', fontSize:'13px', color:'var(--faint)' } }, a.year),
+        this.h('span', null, a.text)
+      ));
+    return this.h('section', { style: { marginTop:'48px' } },
+      this.h('h2', { style: this.sectionTitle() }, 'Awards'),
+      this.h('ul', { style: { listStyle:'none', margin:'0', padding:'0', display:'flex', flexDirection:'column', gap:'10px' } }, ...items)
+    );
+  }
+
+  /* parse inline CSS string → React style object */
+  css(str) {
+    const o = {};
+    str.split(';').forEach(d => {
+      const i = d.indexOf(':');
+      if (i < 0) return;
+      const prop = d.slice(0, i).trim().replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+      o[prop] = d.slice(i + 1).trim();
+    });
+    return o;
+  }
+
+  renderVals() {
+    const c = this.state.content;
+    if (!c) return { toggleTheme: () => {} };
+
+    const p = c.profile;
+    const scholarLink = (p.links.find(l => l.label === 'Scholar') || {}).href || '#';
+    return {
+      toggleTheme: () => {
+        const dark = !this.state.dark;
+        this.applyTheme(dark);
+        try { localStorage.setItem('hp-theme', dark ? 'dark' : 'light'); } catch (e) {}
+        this.setState({ dark });
+      },
+      name:           p.name,
+      avatar:         p.avatar,
+      title:          p.title,
+      lab:            p.team,
+      university:     p.affiliation,
+      profileLinks:   this.buildProfileLinks(p.links),
+      scholarLink,
+      aboutHtml:      this.buildAbout(c.about),
+      newsHtml:       this.buildNews(c.news),
+      pubsHtml:       this.buildPubs(c.publications, scholarLink),
+      educationHtml:  this.buildList(c.education,  'Education',  ['degree', 'institution', 'period']),
+      experienceHtml: this.buildList(c.experience, 'Experience', ['role',   'org',         'period']),
+      awardsHtml:     this.buildAwards(c.awards),
+      contactTagline: c.contact.tagline,
+      cvUrl:          c.contact.cv_url,
+      footer:         c.footer,
+    };
+  }
+}
+</script>
 </body>
 </html>

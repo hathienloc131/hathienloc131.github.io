@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf9f6; --surface:#ffffff; --fg:#1b1b1a; --muted:#5f5d57; --faint:#8c8a82;
+    --border:#e7e4dd; --hair:#efece6; --accent:#3a5e8c; --accent-soft:#eef3f9;
+  }
+  :root[data-theme="dark"]{
+    --bg:#15161a; --surface:#1c1e24; --fg:#e9e7e1; --muted:#a6a39b; --faint:#75736c;
+    --border:#2b2e36; --hair:#23252b; --accent:#8fb4e2; --accent-soft:#1f2733;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+    -webkit-font-smoothing:antialiased;transition:background .35s ease,color .35s ease}
+  a{color:inherit}
+</style>
+</helmet>
+
+<div style="min-height:100vh">
+
+  <header style="position:sticky;top:0;z-index:20;backdrop-filter:saturate(1.4) blur(10px);background:color-mix(in srgb, var(--bg) 82%, transparent);border-bottom:1px solid var(--hair)">
+    <div style="max-width:840px;margin:0 auto;padding:13px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+      <a href="#top" style="font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:17px;text-decoration:none;letter-spacing:-.01em">Lan Pham</a>
+      <nav style="display:flex;align-items:center;gap:22px">
+        <a href="#publications" style="font-size:13.5px;text-decoration:none;color:var(--muted)" style-hover="color:var(--fg)">Publications</a>
+        <a href="#cv" style="font-size:13.5px;text-decoration:none;color:var(--muted)" style-hover="color:var(--fg)">CV</a>
+        <a href="#contact" style="font-size:13.5px;text-decoration:none;color:var(--muted)" style-hover="color:var(--fg)">Contact</a>
+        <button onClick="{{ toggleTheme }}" aria-label="Toggle theme" style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid var(--border);border-radius:8px;background:var(--surface);cursor:pointer;color:var(--fg);padding:0" style-hover="border-color:var(--accent)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.2 5.2l1.7 1.7M17.1 17.1l1.7 1.7M18.8 5.2l-1.7 1.7M6.9 17.1l-1.7 1.7"></path>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" style="max-width:840px;margin:0 auto;padding:56px 28px 96px">
+
+    <!-- PROFILE -->
+    <section style="display:flex;gap:34px;align-items:flex-start;flex-wrap:wrap">
+      <div style="flex:none;width:158px;height:188px;border-radius:12px;overflow:hidden;border:1px solid var(--border);background-image:repeating-linear-gradient(135deg,var(--hair) 0 11px,var(--surface) 11px 22px);display:flex;align-items:flex-end;justify-content:center;padding-bottom:12px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--faint);letter-spacing:.04em">portrait</span>
+      </div>
+      <div style="flex:1;min-width:240px">
+        <h1 style="margin:2px 0 0;font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:34px;letter-spacing:-.02em;line-height:1.1">Lan Pham</h1>
+        <p style="margin:9px 0 0;font-size:15.5px;color:var(--fg)">PhD Student in Computer Science</p>
+        <p style="margin:3px 0 0;font-size:14.5px;color:var(--muted)">Machine Learning Lab · University of Somewhere</p>
+        <p style="margin:14px 0 0;font-size:15px;line-height:1.6;color:var(--muted);max-width:46ch;text-wrap:pretty">I work on machine learning and natural language processing, with a focus on making large models more reliable and efficient.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:18px">
+          <a href="/cdn-cgi/l/email-protection#107c717e507568717d607c753e757465" style="display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-decoration:none;padding:6px 11px;border:1px solid var(--border);border-radius:7px;color:var(--muted)" style-hover="color:var(--fg);border-color:var(--accent)">Email</a>
+          <a href="#" style="display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-decoration:none;padding:6px 11px;border:1px solid var(--border);border-radius:7px;color:var(--muted)" style-hover="color:var(--fg);border-color:var(--accent)">Scholar</a>
+          <a href="#" style="display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-decoration:none;padding:6px 11px;border:1px solid var(--border);border-radius:7px;color:var(--muted)" style-hover="color:var(--fg);border-color:var(--accent)">GitHub</a>
+          <a href="#" style="display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-decoration:none;padding:6px 11px;border:1px solid var(--border);border-radius:7px;color:var(--muted)" style-hover="color:var(--fg);border-color:var(--accent)">Twitter</a>
+          <a href="#cv" style="display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-decoration:none;padding:6px 11px;border:1px solid var(--border);border-radius:7px;color:var(--muted)" style-hover="color:var(--fg);border-color:var(--accent)">CV</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section style="margin-top:52px">
+      <h2 style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 16px">About</h2>
+      <div style="font-size:16px;line-height:1.72;color:var(--fg);max-width:64ch;text-wrap:pretty">
+        <p style="margin:0 0 14px">I am a second-year PhD student advised by Prof. A. Researcher. Before that, I completed my B.S. in Computer Science, where I worked on representation learning for structured data.</p>
+        <p style="margin:0">My research aims to understand and improve how neural networks generalize. I am particularly interested in efficient fine-tuning, model evaluation, and the gap between benchmark performance and real-world reliability. I am always happy to chat — feel free to reach out.</p>
+      </div>
+    </section>
+
+    <!-- NEWS -->
+    <section style="margin-top:48px">
+      <h2 style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 16px">News</h2>
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px">
+        <li style="display:flex;gap:18px;font-size:15px;line-height:1.55">
+          <span style="flex:none;width:74px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--faint);padding-top:1px">May 2026</span>
+          <span style="color:var(--fg)">One paper accepted to <strong style="font-weight:600">ICML 2026</strong>. See you in Seoul!</span>
+        </li>
+        <li style="display:flex;gap:18px;font-size:15px;line-height:1.55">
+          <span style="flex:none;width:74px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--faint);padding-top:1px">Feb 2026</span>
+          <span style="color:var(--fg)">Started a research internship at a great lab.</span>
+        </li>
+        <li style="display:flex;gap:18px;font-size:15px;line-height:1.55">
+          <span style="flex:none;width:74px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--faint);padding-top:1px">Nov 2025</span>
+          <span style="color:var(--fg)">Gave a talk on efficient fine-tuning at the lab seminar.</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" style="margin-top:48px;scroll-margin-top:72px">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:8px">
+        <h2 style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0">Publications</h2>
+        <a href="#" style="font-family:'IBM Plex Mono',monospace;font-size:12px;text-decoration:none;color:var(--faint)" style-hover="color:var(--accent)">full list on Scholar →</a>
+      </div>
+      <p style="font-size:13px;color:var(--faint);margin:0 0 4px"><span style="color:var(--accent)">*</span> denotes equal contribution.</p>
+
+      <div style="display:flex;flex-direction:column">
+
+        <!-- pub -->
+        <article style="display:flex;gap:22px;padding:22px 0;border-top:1px solid var(--hair)">
+          <div style="flex:none;width:128px;height:84px;border-radius:7px;border:1px solid var(--border);background-image:repeating-linear-gradient(135deg,var(--hair) 0 9px,var(--surface) 9px 18px);display:flex;align-items:center;justify-content:center">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--faint)">figure</span>
+          </div>
+          <div style="flex:1">
+            <h3 style="margin:0 0 5px;font-family:'Source Serif 4',Georgia,serif;font-size:17.5px;font-weight:600;line-height:1.3;letter-spacing:-.01em">Reliable Fine-Tuning of Large Language Models under Distribution Shift</h3>
+            <p style="margin:0 0 3px;font-size:14px;color:var(--muted);line-height:1.5"><strong style="color:var(--fg);font-weight:600">Lan Pham</strong>, B. Author, C. Coauthor</p>
+            <p style="margin:0 0 10px;font-size:14px;color:var(--muted)"><em style="font-style:italic">International Conference on Machine Learning (ICML)</em>, 2026</p>
+            <div style="display:flex;flex-wrap:wrap;gap:7px">
+              <a href="#" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-decoration:none;padding:3px 9px;border:1px solid var(--border);border-radius:6px;color:var(--muted)" style-hover="color:var(--fg);border-color:var(--accent)">PDF</a>
+              <a href="#" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-decoration:none;padding:3px 9px;border:1px solid var(--border);border-radius:6px;color:var(--muted)" style-hover="color:var(--fg);border-color:var(--accent)">arXiv</a>
+              <a href="#" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-decoration:none;padding:3px 9px;border:1px solid var(--border);border-radius:6px;color:var(--muted)" style-hover="color:var(--fg);border-color:var(--accent)">Code</a>
+              <a href="#" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-decoration:none;padding:3px 9px;border:1px solid var(--border);border-radius:6px;color:var(--muted)" style-hover="color:var(--fg);border-color:var(--accent)">BibTeX</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- pub -->
+        <article style="display:flex;gap:22px;padding:22px 0;border-top:1px solid var(--hair)">
+          <div style="flex:none;width:128px;height:84px;border-radius:7px;border:1px solid var(--border);background-image:repeating-linear-gradient(135deg,var(--hair) 0 9px,var(--surface) 9px 18px);display:flex;align-items:center;justify-content:center">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--faint)">figure</span>
+          </div>
+          <div style="flex:1">
+            <h3 style="margin:0 0 5px;font-family:'Source Serif 4',Georgia,serif;font-size:17.5px;font-weight:600;line-height:1.3;letter-spacing:-.01em">What Do Benchmarks Actually Measure? A Study of Evaluation Gaps</h3>
+            <p style="margin:0 0 3px;font-size:14px;color:var(--muted);line-height:1.5">D. Collaborator<span style="color:var(--accent)">*</span>, <strong style="color:var(--fg);font-weight:600">Lan Pham</strong><span style="color:var(--accent)">*</span>, E. Advisor</p>
+            <p style="margin:0 0 10px;font-size:14px;color:var(--muted)"><em style="font-style:italic">Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025</p>
+            <div style="display:flex;flex-wrap:wrap;gap:7px">
+              <a href="#" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-decoration:none;padding:3px 9px;border:1px solid var(--border);border-radius:6px;color:var(--muted)" style-hover="color:var(--fg);border-color:var(--accent)">PDF</a>
+              <a href="#" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-decoration:none;padding:3px 9px;border:1px solid var(--border);border-radius:6px;color:var(--muted)" style-hover="color:var(--fg);border-color:var(--accent)">arXiv</a>
+              <a href="#" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-decoration:none;padding:3px 9px;border:1px solid var(--border);border-radius:6px;color:var(--muted)" style-hover="color:var(--fg);border-color:var(--accent)">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- pub -->
+        <article style="display:flex;gap:22px;padding:22px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)">
+          <div style="flex:none;width:128px;height:84px;border-radius:7px;border:1px solid var(--border);background-image:repeating-linear-gradient(135deg,var(--hair) 0 9px,var(--surface) 9px 18px);display:flex;align-items:center;justify-content:center">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--faint)">figure</span>
+          </div>
+          <div style="flex:1">
+            <h3 style="margin:0 0 5px;font-family:'Source Serif 4',Georgia,serif;font-size:17.5px;font-weight:600;line-height:1.3;letter-spacing:-.01em">Parameter-Efficient Adapters for Low-Resource Languages</h3>
+            <p style="margin:0 0 3px;font-size:14px;color:var(--muted);line-height:1.5"><strong style="color:var(--fg);font-weight:600">Lan Pham</strong>, F. Mentor</p>
+            <p style="margin:0 0 10px;font-size:14px;color:var(--muted)"><em style="font-style:italic">Workshop on Efficient NLP, ACL</em>, 2024</p>
+            <div style="display:flex;flex-wrap:wrap;gap:7px">
+              <a href="#" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-decoration:none;padding:3px 9px;border:1px solid var(--border);border-radius:6px;color:var(--muted)" style-hover="color:var(--fg);border-color:var(--accent)">PDF</a>
+              <a href="#" style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;text-decoration:none;padding:3px 9px;border:1px solid var(--border);border-radius:6px;color:var(--muted)" style-hover="color:var(--fg);border-color:var(--accent)">arXiv</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION + EXPERIENCE -->
+    <section style="margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:40px">
+      <div>
+        <h2 style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 16px">Education</h2>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px">
+          <li>
+            <p style="margin:0;font-size:15px;font-weight:600;line-height:1.4">Ph.D., Computer Science</p>
+            <p style="margin:2px 0 0;font-size:14px;color:var(--muted)">University of Somewhere</p>
+            <p style="margin:1px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint)">2024 — present</p>
+          </li>
+          <li>
+            <p style="margin:0;font-size:15px;font-weight:600;line-height:1.4">B.S., Computer Science</p>
+            <p style="margin:2px 0 0;font-size:14px;color:var(--muted)">Home University</p>
+            <p style="margin:1px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint)">2020 — 2024</p>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2 style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 16px">Experience</h2>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px">
+          <li>
+            <p style="margin:0;font-size:15px;font-weight:600;line-height:1.4">Research Intern</p>
+            <p style="margin:2px 0 0;font-size:14px;color:var(--muted)">Industry Research Lab</p>
+            <p style="margin:1px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint)">Summer 2026</p>
+          </li>
+          <li>
+            <p style="margin:0;font-size:15px;font-weight:600;line-height:1.4">Teaching Assistant</p>
+            <p style="margin:2px 0 0;font-size:14px;color:var(--muted)">Intro to Machine Learning</p>
+            <p style="margin:1px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint)">2024 — 2025</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- AWARDS -->
+    <section style="margin-top:48px">
+      <h2 style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 16px">Awards</h2>
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px">
+        <li style="display:flex;gap:18px;font-size:15px;line-height:1.5">
+          <span style="flex:none;width:74px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--faint)">2026</span>
+          <span>Graduate Research Fellowship</span>
+        </li>
+        <li style="display:flex;gap:18px;font-size:15px;line-height:1.5">
+          <span style="flex:none;width:74px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--faint)">2025</span>
+          <span>Outstanding Reviewer, NeurIPS</span>
+        </li>
+        <li style="display:flex;gap:18px;font-size:15px;line-height:1.5">
+          <span style="flex:none;width:74px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--faint)">2024</span>
+          <span>Best Undergraduate Thesis Award</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CV + CONTACT -->
+    <section id="cv" style="margin-top:48px;scroll-margin-top:72px">
+      <div id="contact" style="scroll-margin-top:72px;border:1px solid var(--border);border-radius:14px;background:var(--surface);padding:26px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+        <div>
+          <h2 style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-size:20px;font-weight:600">Get in touch</h2>
+          <p style="margin:6px 0 0;font-size:14.5px;color:var(--muted);max-width:42ch">Open to collaborations and research chats. Reach me by email or download my CV.</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="/cdn-cgi/l/email-protection#610d000f210419000c110d044f040514" style="font-family:'IBM Plex Mono',monospace;font-size:13px;text-decoration:none;padding:9px 16px;border-radius:8px;background:var(--accent);color:#fff" style-hover="opacity:.9">Email me</a>
+          <a href="#" style="font-family:'IBM Plex Mono',monospace;font-size:13px;text-decoration:none;padding:9px 16px;border-radius:8px;border:1px solid var(--border);color:var(--fg)" style-hover="border-color:var(--accent)">Download CV (PDF)</a>
+        </div>
+      </div>
+      <p style="text-align:center;margin:34px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint)">© 2026 Lan Pham · Built with care · Last updated June 2026</p>
+    </section>
+
+  </main>
+</div>
+</x-dc>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { dark: false };
+
+  componentDidMount() {
+    let pref = null;
+    try { pref = localStorage.getItem('hp-theme'); } catch (e) {}
+    if (!pref && window.matchMedia) {
+      pref = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    const dark = pref === 'dark';
+    this.applyTheme(dark);
+    this.setState({ dark });
+  }
+
+  applyTheme(dark) {
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  }
+
+  renderVals() {
+    return {
+      toggleTheme: () => {
+        const dark = !this.state.dark;
+        this.applyTheme(dark);
+        try { localStorage.setItem('hp-theme', dark ? 'dark' : 'light'); } catch (e) {}
+        this.setState({ dark });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

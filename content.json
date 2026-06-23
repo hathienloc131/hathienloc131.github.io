@@ -1,0 +1,101 @@
+{
+  "profile": {
+    "name": "Thien-Loc Ha",
+    "avatar": "./images/avatar.jpg",
+    "title": "Foundation AI Engineer",
+    "team": "Foundation AI Team",
+    "affiliation": "VinRobotics",
+    "email": "ha.thienloc131@gmail.com",
+    "links": [
+      { "label": "Email",   "href": "mailto:ha.thienloc131@gmail.com",                          "visible": true  },
+      { "label": "Scholar", "href": "https://scholar.google.com/citations?user=kP90OkkAAAAJ&hl=en&oi=ao", "visible": true  },
+      { "label": "GitHub",  "href": "https://github.com/hathienloc131",                         "visible": true  },
+      { "label": "CV",      "href": "#cv",                                                       "visible": true  }
+    ]
+  },
+
+  "about": {
+    "visible": true,
+    "paragraphs": [
+      "I am a Foundation AI Engineer at VinRobotics, working on Learning from Demonstration and Vision-Language-Action (VLA) for robot manipulation. Previously, I was an AI Engineer at VNG ZingPlay Game Studios, focusing on reinforcement learning in games. I obtained my B.Sc. degree in Computer Science (Advanced Program in Computer Science) from the University of Science, Vietnam National University Ho Chi Minh City (HCMUS) in 2024, advised by <a href=\"https://www.clc.hcmus.edu.vn/ddien/\" target=\"_blank\" rel=\"noopener noreferrer\">Prof. Dien Dinh</a> and <a href=\"https://scholar.google.com/citations?hl=en&user=jECXavQAAAAJ&view_op=list_works&sortby=pubdate\" target=\"_blank\" rel=\"noopener noreferrer\">Dr. Long Nguyen</a>"
+    ]
+  },
+
+  "news": {
+    "visible": false,
+    "items": [
+      { "visible": true,  "date": "May 2026", "text": "One paper accepted to <strong>ICML 2026</strong>. See you in Seoul!" },
+      { "visible": true,  "date": "Feb 2026", "text": "Started a research internship at a great lab." },
+      { "visible": true,  "date": "Nov 2025", "text": "Gave a talk on efficient fine-tuning at the lab seminar." }
+    ]
+  },
+
+  "publications": {
+    "visible": true,
+    "items": [
+      {
+        "visible": true,
+        "title": "Multi-perspective traffic video description model with fine-grained refinement approach",
+        "authors": [
+          { "name": "Tuan-An To", "equal": true },
+          { "name": "Minh-Nam Tran", "equal": true },
+          { "name": "Trong-Bao Ho", "equal": true },
+          { "name": "Thien-Loc Ha", "equal": true, "self": true },
+          { "name": "Quang-Tan Nguyen", "equal": true },
+          { "name": "Hoang-Chau Luong" },
+          { "name": "Thanh-Duy Cao" },
+          { "name": "Minh-Triet Tran" }
+        ],
+        "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops",
+        "year": 2024,
+        "links": { "pdf": "https://openaccess.thecvf.com/content/CVPR2024W/AICity/papers/To_Multi-perspective_Traffic_Video_Description_Model_with_Fine-grained_Refinement_Approach_CVPRW_2024_paper.pdf", "code": "https://github.com/ToTuanAn/AICityChallenge2024_Track2"}
+      },
+      {
+        "visible": true,
+        "title": "Auto Graph of Thoughts: A Hands-free and Cost Effective Method for using Graph of Thoughts",
+        "authors": [
+          { "name": "Thien-Loc Ha", "self": true, "equal": true },
+          { "name": "Trong-Bao Ho", "equal": true },
+          { "name": "Long Nguyen" },
+          { "name": "Dien Dinh" }
+        ],
+        "venue": "Proceedings of the 10th International Conference on Computer Technology Applications (ICCTA)",
+        "year": 2024,
+        "links": { "pdf": "https://dl.acm.org/doi/pdf/10.1145/3674558.3674574", "code": "https://github.com/hathienloc131/auto-graph-of-thoughts" }
+      }
+    ]
+  },
+
+  "education": {
+    "visible": true,
+    "items": [
+      { "visible": true, "degree": "B.Sc., Computer Science",  "institution": "University of Science, Vietnam National University Ho Chi Minh City",         "period": "2020 — 2024"  }
+    ]
+  },
+
+  "experience": {
+    "visible": true,
+    "items": [
+      { "visible": true, "role": "Foundation AI Engineer",    "org": "VinRobotics",     "period": "Jun 2025 - Present" },
+      { "visible": true, "role": "AI Engineer",    "org": "VNG Zingplay Game Studios",     "period": "Dec 2023 - Jun 2025" },
+      { "visible": true, "role": "AI Intern",    "org": "VNG Zingplay Game Studios",     "period": "Mar 2023 - Dec 2023" }
+    ]
+  },
+
+  "awards": {
+    "visible": false,
+    "items": [
+      { "visible": true, "year": "2026", "text": "Graduate Research Fellowship" },
+      { "visible": true, "year": "2025", "text": "Outstanding Reviewer, NeurIPS" },
+      { "visible": true, "year": "2024", "text": "Best Undergraduate Thesis Award" }
+    ]
+  },
+
+  "contact": {
+    "visible": true,
+    "tagline": "Open to collaborations and research chats. Reach me by email or download my CV.",
+    "cv_url": "#"
+  },
+
+  "footer": "© 2026 Thien-Loc Ha · Built with care · Last updated June 2026"
+}
