@@ -17,7 +17,7 @@
   "about": {
     "visible": true,
     "paragraphs": [
-      "I am a Foundation AI Engineer at VinRobotics, working on Learning from Demonstration and Vision-Language-Action (VLA) for robot manipulation. Previously, I was an AI Engineer at VNG ZingPlay Game Studios, focusing on reinforcement learning in games. I obtained my B.Sc. degree in Computer Science (Advanced Program in Computer Science) from the University of Science, Vietnam National University Ho Chi Minh City (HCMUS) in 2024, advised by <a href=\"https://www.clc.hcmus.edu.vn/ddien/\" target=\"_blank\" rel=\"noopener noreferrer\">Prof. Dien Dinh</a> and <a href=\"https://scholar.google.com/citations?hl=en&user=jECXavQAAAAJ&view_op=list_works&sortby=pubdate\" target=\"_blank\" rel=\"noopener noreferrer\">Dr. Long Nguyen</a>"
+      "I am a Foundation AI Engineer at VinRobotics, working with <a href=\"https://anindex.github.io\" target=\"_blank\" rel=\"noopener noreferrer\">An Thai Le</a> and <a href=\"https://vienngo.github.io\" target=\"_blank\" rel=\"noopener noreferrer\">Vien Ngo</a> on Learning from Demonstration and Vision-Language-Action (VLA) for robot manipulation. Previously, I was an AI Engineer at VNG ZingPlay Game Studios, focusing on reinforcement learning in games. I obtained my B.Sc. degree in Computer Science (Advanced Program in Computer Science) from the University of Science, Vietnam National University Ho Chi Minh City (HCMUS) in 2024, advised by <a href=\"https://www.clc.hcmus.edu.vn/ddien/\" target=\"_blank\" rel=\"noopener noreferrer\">Prof. Dien Dinh</a> and <a href=\"https://scholar.google.com/citations?hl=en&user=jECXavQAAAAJ&view_op=list_works&sortby=pubdate\" target=\"_blank\" rel=\"noopener noreferrer\">Dr. Long Nguyen</a>"
     ]
   },
 
@@ -49,7 +49,7 @@
           { "name": "An Thai Le" },
           { "name": "Ngo Anh Vien" }
         ],
-        "venue": "Under review",
+        "venue": "RSS 2026 Workshop on Diffusion for Robot Learning",
         "year": 2026,
         "links": { "pdf": "https://arxiv.org/pdf/2606.20246"}
       },
@@ -68,7 +68,7 @@
           { "name": "An Thai Le" },
           { "name": "Ngo Anh Vien" }
         ],
-        "venue": "Under review",
+        "venue": "RSS 2026 Workshop on Diffusion for Robot Learning",
         "year": 2026,
         "links": { "pdf": "https://arxiv.org/pdf/2606.20246"}
       },
@@ -97,9 +97,41 @@
           { "name": "Duy MH Nguyen" },
           { "name": "Ngo Anh Vien" }
         ],
-        "venue": "Under review",
+        "venue": "RSS 2026 Workshop on Diffusion for Robot Learning",
         "year": 2026,
         "links": { "pdf": "https://arxiv.org/pdf/2606.20246"}
+      },
+      {
+        "visible": true,
+        "title": "FOCA: Future-Oriented Conditioning for Data-Efficient Vision-Language-Action Adaptation",
+        "authors": [
+          { "name": "Minh Duc Nguyen" },
+          { "name": "Nghiem Tuong Diep" },
+          { "name": "Gia-Binh Nguyen" },
+          { "name": "Trong-Bao Ho" },
+          { "name": "Doanh Le Thien" },
+          { "name": "Quang-Tan Nguyen" },
+          { "name": "Thien-Loc Ha", "self": true },
+          { "name": "Tran Van Nhiem" },
+          { "name": "Bao Thach" },
+          { "name": "Tran Xuan Nhat" },
+          { "name": "Tuan Anh Tran" },
+          { "name": "Artur Habuda" },
+          { "name": "Philip Lund Møller" },
+          { "name": "Tran Nguyen Le" },
+          { "name": "Daniel Sonntag" },
+          { "name": "Mathias Niepert" },
+          { "name": "Khoa D Doan" },
+          { "name": "Vu N Duong" },
+          { "name": "Hung Ngo" },
+          { "name": "Minh N Vu" },
+          { "name": "Duy MH Nguyen" },
+          { "name": "An Thai Le" },
+          { "name": "Ngo Anh Vien" }
+        ],
+        "venue": "Forty-third International Conference on Machine Learning (ICML)",
+        "year": 2026,
+        "links": { "pdf": "https://openreview.net/forum?id=0cnDTttyMR" }
       },
       {
         "visible": true,
